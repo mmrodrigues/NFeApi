@@ -1,4 +1,6 @@
-﻿using System;
+﻿using NFeApiLib.NFe.CertificadoDigital;
+using NFeApiLib.NFe.Tools;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,6 +21,7 @@ namespace NFeApi
 
         protected override void OnStart(string[] args)
         {
+            Process();
         }
 
         protected override void OnStop()
@@ -27,7 +30,11 @@ namespace NFeApi
 
         public void Process()
         {
+            var cert = CertificadoController.Instance.getCertificado_SerialNumber("313838");
+            var obj = new TConsSitNFe("31181209339936000973550330000930221088758563");
+            var xml = obj.SerializeObject();
 
+            return;
         }
     }
 }

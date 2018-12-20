@@ -29,18 +29,6 @@ using System.Xml.Serialization;
 [System.Xml.Serialization.XmlRootAttribute("consSitNFe", Namespace = "http://www.portalfiscal.inf.br/nfe", IsNullable = false)]
 public class TConsSitNFe : Serializavel
 {
-    public TConsSitNFe()
-    {
-
-    }
-    public TConsSitNFe(string chave)
-    {
-        versao = TVerConsSitNFe.Item400;
-        tpAmb = TAmb.Item2;
-        xServ = TConsSitNFeXServ.CONSULTAR;
-        chNFe = chave;
-    }
-
     private TAmb tpAmbField;
 
     private TConsSitNFeXServ xServField;

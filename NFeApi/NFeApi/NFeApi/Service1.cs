@@ -31,7 +31,13 @@ namespace NFeApi
         public void Process()
         {
             var cert = CertificadoController.Instance.getCertificado_SerialNumber("313838");
-            var obj = new TConsSitNFe("31181209339936000973550330000930221088758563");
+            var obj = new TConsSitNFe()
+            {
+                versao = TVerConsSitNFe.Item400,
+                tpAmb = TAmb.Item2,
+                xServ = TConsSitNFeXServ.CONSULTAR,
+                chNFe = "31181209339936000973550330000930221088758563"
+            };
             var xml = obj.SerializeObject();
 
             return;
